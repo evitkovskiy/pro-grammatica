@@ -1,0 +1,28 @@
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  .menu li {
+    margin-right: 1em;
+  }
+
+  .menu li a {
+    display: inline-block;
+    padding: 0.5em 1em;
+  }
+
+  .menu li.selected a {
+    background-color: #eee;
+    color: black;
+    border-radius: 3px;
+  }
+
+  .menu li:hover {
+    background-color: #e98686;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+  }

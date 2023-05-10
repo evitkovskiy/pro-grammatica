@@ -1,0 +1,5 @@
+<ul class="menu">
+    <ng-container *ngFor="let item of menuItems; trackBy: trackItem">
+        <li [routerLink]="item.path" routerLinkActive="selected"><a>{{item.label}}</a></li>
+    </ng-container>
+</ul>

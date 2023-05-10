@@ -1,0 +1,19 @@
+<div class="custom-input" [class.focused]="focused">
+    <label class="custom-input_label">
+      <span class="custom-input_label-text">{{placeholder}}</span>
+      <input [type]="type"
+             [required]="required"
+             [disabled]="disabled"
+             [pattern]="pattern"
+             [autocomplete]="autocomplete"
+             [readonly]="readonly"
+             [size]="size"
+             [value]="value"
+             (focus)="onFocus()"
+             (blur)="onBlur()"
+             (input)="onChange($event)"
+             [ngClass]="getValidationClass()"
+       >
+    </label>
+    <div class="custom-input_error" *ngIf="control.touched && control.invalid">{{getError()}}</div>
+</div>

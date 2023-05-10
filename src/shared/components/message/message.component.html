@@ -1,0 +1,8 @@
+<div
+    class="message"
+    [ngClass]="message.success ? 'success' : 'failed'"
+    [@hideComponent]="message.success ? componentState: ''"
+>
+    <span class="message-text">{{message.message}}</span>
+    <span class="close-button" (click)="close.emit(true)">X</span>
+</div>

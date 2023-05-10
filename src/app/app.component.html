@@ -1,0 +1,10 @@
+<pro-grammatica-header></pro-grammatica-header>
+<div class="main">
+    <ng-container *ngIf="authService.isAuthenticatedUser()">
+        <div class="container">
+            <pro-grammatia-nav-panel></pro-grammatia-nav-panel>
+        </div>
+    </ng-container>
+    <router-outlet></router-outlet>
+</div>
+

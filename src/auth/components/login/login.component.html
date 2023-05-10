@@ -1,0 +1,15 @@
+<div class="login-form">
+    <h1>Autorization</h1>
+    <form [formGroup]="loginForm">
+        <ng-container *ngFor="let loginFormControl of loginFormControls; trackBy: trackItem">
+            <pro-grammatica-custom-input
+                formControlName="{{loginFormControl.control}}"
+                [placeholder]="loginFormControl.placeholder"
+            >
+            </pro-grammatica-custom-input >
+        </ng-container>
+        <button [disabled]="loginForm.invalid" class="login-form-btn" type="submit" (click)="login()">Log in</button>
+    </form>
+</div>
+
+<ng-template refDirective></ng-template>

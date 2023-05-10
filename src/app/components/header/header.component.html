@@ -1,0 +1,10 @@
+<header class="header">
+    <div class="user-info" *ngIf="authService.isAuthenticatedUser()">
+        <a class="user" routerLink="/profile">{{currentUser$ | async}}</a>
+        <button class="logout" (click)="logout()">Logout</button>
+    </div>
+    <div class="logo" *ngIf="!authService.isAuthenticatedUser()">
+        <img src="../../../assets/image/logo.png">
+    </div>
+  </header>
+  <ng-template refDirective></ng-template>

@@ -1,0 +1,27 @@
+<h1>Profile</h1>
+
+<div *ngIf="profile">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <ng-container *ngFor="let profileFormControl of profileFormControls; trackBy: trackItem">
+        <pro-grammatica-custom-input
+            formControlName="{{profileFormControl.control}}"
+            [placeholder]="profileFormControl.placeholder"
+            [readonly]="profileFormControl.readonly"
+            [required]="profileFormControl.required"
+        ></pro-grammatica-custom-input>
+    </ng-container>
+    <div class="action-button">
+        <button
+            class="submit"
+            type="submit"
+            [disabled]="profileForm.invalid || (isSameProfiles$ | async)"
+         >Save</button>
+        <button class="cancel" type="button" [routerLink]="['/']">Cancel</button>
+    </div>
+  </form>
+  <div class="error-save" *ngIf="isSameProfiles$ | async">Nothing to save, objects are the same</div>
+</div>
+
+<div *ngIf="!profile">Loading profile...</div>
+
+<ng-template refDirective></ng-template>
